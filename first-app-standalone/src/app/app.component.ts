@@ -9,4 +9,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'first-app-standalone';
+
+  constructor() {
+    console.log('constructor');
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit');
+    // this.changeTitle();
+  }
+
+  changeTitle() {
+    this.title = 'Coding Technyks';
+  }
 }
