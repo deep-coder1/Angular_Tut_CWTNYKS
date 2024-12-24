@@ -8,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'first-app-ngmodule';
+  // title = 'first-app-ngmodule';
+
+  title = 'Code with technyks';
+
+  constructor() {
+    console.log('constructor');
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit');
+    // this.changeTitle();
+  }
+
+  changeTitle() {
+    this.title = 'Coding Technyks';
+  }
 }
