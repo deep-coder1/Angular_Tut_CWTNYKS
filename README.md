@@ -12,3 +12,4 @@ ng serve -o --port 4201 -->
 <!-- 44:54 - Run ngModule Project in different port - Compare File Structure -->
 <!-- 01:07:00 - Play around with projects -->
 <!-- 01:24:00 - Create Component (Home Component), Understand “export” keyword, Routing & Navigation -->
+<!-- 01:43:44 - Create About Component - Routing & Navigation -->
