@@ -57,3 +57,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+<!-- Generate module:- -->
+<!-- first-app-ngmodule> ng generate module app-home --route home --module app.modul
+e  -->
+
+<!-- first-app-ngmodule>ng
+ generate module home --routing -->
+

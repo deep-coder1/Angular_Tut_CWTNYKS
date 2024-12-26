@@ -10,18 +10,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // title = 'first-app-ngmodule';
 
-  title = 'Code with technyks';
+  // title = 'Code with technyks';
 
-  constructor() {
-    console.log('constructor');
-  }
+  // constructor() {
+  //   console.log('constructor');
+  // }
 
-  ngOnInit() {
-    console.log('ngOnInit');
-    // this.changeTitle();
-  }
+  // ngOnInit() {
+  //   console.log('ngOnInit');
+  //   // this.changeTitle();
+  // }
 
-  changeTitle() {
-    this.title = 'Coding Technyks';
-  }
+  // changeTitle() {
+  //   this.title = 'Coding Technyks';
+  // }
 }

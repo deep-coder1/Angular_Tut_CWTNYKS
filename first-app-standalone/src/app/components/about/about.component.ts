@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+// import { Component, inject } from '@angular/core';
+// import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -9,23 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent {
 
-  private route = inject(ActivatedRoute);
+  // private route = inject(ActivatedRoute);
 
-  ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
+  // ngOnInit() {
+  //   const id = this.route.snapshot.paramMap.get('id');
+  //   console.log(id);
 
-    // this.route.queryParams.subscribe({
-    this.route.params.subscribe({
-      next: (data) => {
-        console.log(data['id']);
-      },
-      error: (e) => {
-        console.log(e);
+  //   // this.route.queryParams.subscribe({
+  //   this.route.params.subscribe({
+  //     next: (data) => {
+  //       console.log(data['id']);
+  //     },
+  //     error: (e) => {
+  //       console.log(e);
 
-      }
-    })
+  //     }
+  //   })
 
-  }
+  // }
 
 }

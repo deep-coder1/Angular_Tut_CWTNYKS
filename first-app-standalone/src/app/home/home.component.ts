@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent {
 
-  val: number = 2;
+  // val: number = 2;
 
   // private router = inject(Router);
 

@@ -7,20 +7,21 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-// export class AppComponent {
-export class AppComponent implements OnInit {
-  title = 'first-app-standalone';
 
-  constructor() {
-    console.log('constructor');
-  }
+export class AppComponent {
+// export class AppComponent implements OnInit {
+  // title = 'first-app-standalone';
 
-  ngOnInit() {
-    console.log('ngOnInit');
-    // this.changeTitle();
-  }
+  // constructor() {
+  //   console.log('constructor');
+  // }
 
-  changeTitle() {
-    this.title = 'Coding Technyks';
-  }
+  // ngOnInit() {
+  //   console.log('ngOnInit');
+  //   // this.changeTitle();
+  // }
+
+  // changeTitle() {
+  //   this.title = 'Coding Technyks';
+  // }
 }
