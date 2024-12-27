@@ -66,3 +66,6 @@ e  -->
 <!-- first-app-ngmodule>ng
  generate module home --routing -->
 
+ <!-- create component with module, route -->
+ <!-- \first-app-ngmodule>ng generate module admin --route admin --module app.module -->
+

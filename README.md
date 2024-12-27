@@ -14,3 +14,4 @@ ng serve -o --port 4201 -->
 <!-- 01:24:00 - Create Component (Home Component), Understand “export” keyword, Routing & Navigation -->
 <!-- 01:43:44 - Create About Component - Routing & Navigation -->
 <!-- 01:59:34 - Lazy loading - Routing & Navigation -->
+<!-- 02:01:24 - Create Admin Component -->
