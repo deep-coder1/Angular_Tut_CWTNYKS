@@ -15,3 +15,4 @@ ng serve -o --port 4201 -->
 <!-- 01:43:44 - Create About Component - Routing & Navigation -->
 <!-- 01:59:34 - Lazy loading - Routing & Navigation -->
 <!-- 02:01:24 - Create Admin Component -->
+<!-- 02:07:08 - Install & Setup Bootstrap -->
