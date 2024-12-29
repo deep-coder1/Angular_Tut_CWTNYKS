@@ -16,3 +16,4 @@ ng serve -o --port 4201 -->
 <!-- 01:59:34 - Lazy loading - Routing & Navigation -->
 <!-- 02:01:24 - Create Admin Component -->
 <!-- 02:07:08 - Install & Setup Bootstrap -->
+<!-- 02:33:11 - Forms in Angular with form validation -->
