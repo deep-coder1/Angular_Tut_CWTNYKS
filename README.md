@@ -17,3 +17,4 @@ ng serve -o --port 4201 -->
 <!-- 02:01:24 - Create Admin Component -->
 <!-- 02:07:08 - Install & Setup Bootstrap -->
 <!-- 02:33:11 - Forms in Angular with form validation -->
+<!-- 02:40:09 - Add Navbar (Header Component) -->
