@@ -1,6 +1,24 @@
-div {
-  color: red;
-  p {
-    color: blue;
+// div {
+//   color: red;
+//   p {
+//     color: blue;
+//   }
+// }
+
+
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 80vh;
+}
+
+.main-content {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  h1 {
+    font-size: 3rem;
   }
 }
