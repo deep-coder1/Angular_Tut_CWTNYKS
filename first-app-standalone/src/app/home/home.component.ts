@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CoursesComponent } from "../courses/courses.component";
 // import { Router } from '@angular/router';
 // import { RouterModule } from '@angular/router';
 
@@ -8,7 +9,8 @@ import { RouterLink } from '@angular/router';
   // imports: [RouterModule],
   // imports: [RouterLink],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  imports: [CoursesComponent]
 })
 export class HomeComponent {
 
