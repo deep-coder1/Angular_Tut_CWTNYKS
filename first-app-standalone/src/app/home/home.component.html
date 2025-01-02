@@ -34,7 +34,12 @@
   <div class="container">
     <h1 class="text-center">All Courses</h1>
     <div class="row" mt-5>
-      <app-courses></app-courses>
+      @for(course of courses; track $index) {
+        <!-- @for(course of courses; track course.id) { -->
+          <app-courses [course]="course"></app-courses>
+        }
+
+      <!-- <app-courses></app-courses> -->
     </div>
   </div>
 </section>

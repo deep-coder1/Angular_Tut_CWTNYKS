@@ -69,7 +69,7 @@
 <div class="row mt-3">
   @for(course of courses; track $index) {
   <!-- @for(course of courses; track course.id) { -->
-    <app-courses></app-courses>
+    <app-courses [course]="course"></app-courses>
   } @empty {
     <div align="center">
       No Course added yet

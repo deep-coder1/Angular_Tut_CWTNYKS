@@ -14,6 +14,8 @@ import { CoursesComponent } from "../courses/courses.component";
 })
 export class HomeComponent {
 
+  courses: any[] = [];
+
   // val: number = 2;
 
   // private router = inject(Router);
