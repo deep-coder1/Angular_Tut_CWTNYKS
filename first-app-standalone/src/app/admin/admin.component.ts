@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CoursesComponent } from '../courses/courses.component';
+import { Strings } from '../enum/strings.enum';
 
 @Component({
   selector: 'app-admin',
@@ -56,5 +57,14 @@ export class AdminComponent {
     }
 
     console.log(form.value);
+
+    this.saveCourse(form.value);
   }
+
+  saveCourse(formValue: any) {
+    console.log(formValue);
+
+    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(formValue));
+  }
+
 }

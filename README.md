@@ -21,3 +21,4 @@ ng serve -o --port 4201 -->
 <!-- 02:44:43 - Design Home Component -->
 <!-- 02:52:48 - Add Courses Component -->
 <!-- 09:08:49 - ngIf, ngFor, @if, @for, ngSwitch vs @switch, @defer, @Input & @Output decorators -->
+<!-- 09:14:33 - Use of localStorage (to store & fetch courses) and Enum -->
