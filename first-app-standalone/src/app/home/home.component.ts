@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CoursesComponent } from "../courses/courses.component";
+import { Strings } from '../enum/strings.enum';
 // import { Router } from '@angular/router';
 // import { RouterModule } from '@angular/router';
 
@@ -25,5 +26,17 @@ export class HomeComponent {
   // navigate() {
   //   this.router.navigate(['/about']);
   // }
+
+  ngOnInit() {
+    this.getCourses();
+  }
+
+  getCourses() {
+      const data = localStorage.getItem(Strings.STORAGE_KEY);
+      console.log(data);
+      if(data){
+        this.courses = JSON.parse(data);
+      }
+    }
 
 }

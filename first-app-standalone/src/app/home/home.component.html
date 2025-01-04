@@ -36,7 +36,9 @@
     <div class="row" mt-5>
       @for(course of courses; track $index) {
         <!-- @for(course of courses; track course.id) { -->
-          <app-courses [course]="course"></app-courses>
+         <div class="col-lg-4">
+           <app-courses [course]="course"></app-courses>
+         </div>
         }
 
       <!-- <app-courses></app-courses> -->

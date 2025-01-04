@@ -23,6 +23,19 @@ export class AdminComponent {
   showError = false;
   courses: any[] = [];
 
+  ngOnInit() {
+    this.getCourses();
+
+  }
+
+  getCourses() {
+    const data = localStorage.getItem(Strings.STORAGE_KEY);
+    console.log(data);
+    if(data){
+      this.courses = JSON.parse(data);
+    }
+  }
+
   onFileSelected(event: any) {
     console.log(event);
 
@@ -64,7 +77,15 @@ export class AdminComponent {
   saveCourse(formValue: any) {
     console.log(formValue);
 
-    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(formValue));
+    const data = {
+      ...formValue,
+      image: this.cover,
+      id: this.courses.length + 1,
+    };
+
+    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
+
+    this.courses = [ ...this.courses, data ];
   }
 
 }
