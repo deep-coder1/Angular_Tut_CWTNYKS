@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 export class CoursesComponent {
 
   @Input() course: any;
+  @Input() isDelete = false;
 
 }

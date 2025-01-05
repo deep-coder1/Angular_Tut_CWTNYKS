@@ -70,7 +70,7 @@
   @for(course of courses; track $index) {
   <!-- @for(course of courses; track course.id) { -->
    <div class="col-lg-3">
-     <app-courses [course]="course"></app-courses>
+     <app-courses [course]="course" [isDelete]="true" (del)="deleteCourse($event)"></app-courses>
    </div>
   } @empty {
     <div align="center">

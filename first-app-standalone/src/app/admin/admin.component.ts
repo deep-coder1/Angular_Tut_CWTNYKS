@@ -18,7 +18,7 @@ import { Strings } from '../enum/strings.enum';
 export class AdminComponent {
 
   model: any = {};
-  cover!: string;
+  cover!: string | null;
   cover_file: any;
   showError = false;
   courses: any[] = [];
@@ -71,10 +71,17 @@ export class AdminComponent {
 
     console.log(form.value);
 
-    this.saveCourse(form.value);
+    this.saveCourse(form);
   }
 
-  saveCourse(formValue: any) {
+  clearForm(form: NgForm) {
+    form.reset();
+    this.cover = null;
+    this.cover_file = null;
+  }
+
+  saveCourse(form: NgForm) {
+    const formValue = form.value;
     console.log(formValue);
 
     const data = {
@@ -83,9 +90,21 @@ export class AdminComponent {
       id: this.courses.length + 1,
     };
 
-    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
-
     this.courses = [ ...this.courses, data ];
+    // this.localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
+    this.setItem(this.courses);
+
+    this.clearForm(form);
+
+  }
+
+  deleteCourse(course: any) {
+    this.courses = this.courses.filter(course_item => course_item.id != course.id)
+    this.setItem(this.courses);
+  }
+
+  setItem(data: any) {
+    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(data));
   }
 
 }

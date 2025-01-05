@@ -92,3 +92,16 @@ e  -->
           }, -->
 
 <!-- Bootstrap install process -->
+
+<!-- Bootstrap icon install -->
+<!-- npm i bootstrap-icons -->
+
+<!-- angular.json file-->
+<!-- "styles": [
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+            ], -->
+
+<!-- style.scss file -->
+<!-- @import 'bootstrap-icons/font/bootstrap-icons.css'; -->
