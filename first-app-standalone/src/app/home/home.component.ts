@@ -28,12 +28,13 @@ export class HomeComponent {
   // }
 
   ngOnInit() {
+    console.log('home ngoninit');
     this.getCourses();
   }
 
   getCourses() {
       const data = localStorage.getItem(Strings.STORAGE_KEY);
-      console.log(data);
+      // console.log(data);
       if(data){
         this.courses = JSON.parse(data);
       }

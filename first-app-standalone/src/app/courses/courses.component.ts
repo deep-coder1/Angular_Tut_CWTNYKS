@@ -8,12 +8,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CoursesComponent {
 
-  @Input() course: any;
-  @Input() isDelete = false;
+  @Input() courses: any;
+  @Input() isAdmin = false;
   @Output() del = new EventEmitter();
 
-  deleteCourse() {
-    this.del.emit(this.course);
+  deleteCourse(course: any) {
+    this.del.emit(course);
   }
 
 }

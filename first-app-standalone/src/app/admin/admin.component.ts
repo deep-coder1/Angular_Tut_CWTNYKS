@@ -24,13 +24,14 @@ export class AdminComponent {
   courses: any[] = [];
 
   ngOnInit() {
+    console.log('admin ngoninit');
     this.getCourses();
 
   }
 
   getCourses() {
     const data = localStorage.getItem(Strings.STORAGE_KEY);
-    console.log(data);
+    // console.log(data);
     if(data){
       this.courses = JSON.parse(data);
     }
