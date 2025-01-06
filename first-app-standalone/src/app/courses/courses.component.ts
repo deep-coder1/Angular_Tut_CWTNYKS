@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-courses',
@@ -10,5 +10,10 @@ export class CoursesComponent {
 
   @Input() course: any;
   @Input() isDelete = false;
+  @Output() del = new EventEmitter();
+
+  deleteCourse() {
+    this.del.emit(this.course);
+  }
 
 }

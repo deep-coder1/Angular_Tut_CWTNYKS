@@ -23,4 +23,4 @@ ng serve -o --port 4201 -->
 <!-- 03:08:49 - ngIf, ngFor, @if, @for, ngSwitch vs @switch, @defer, @Input & @Output decorators -->
 <!-- 03:14:33 - Use of localStorage (to store & fetch courses) and Enum -->
 <!-- 03:28:56 - Spread Operator, Add & Fetch Courses using localStorage in Admin & Courses Component -->
-<!-- 03:41:04 - Add Bootstrap Icons & Delete Course from Admin Component -->
+<!-- 03:46:34 - Add Bootstrap Icons & Delete Course from Admin Component -->

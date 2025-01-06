@@ -99,7 +99,7 @@ export class AdminComponent {
   }
 
   deleteCourse(course: any) {
-    this.courses = this.courses.filter(course_item => course_item.id != course.id)
+    this.courses = this.courses.filter(course_item => course_item.id != course.id);
     this.setItem(this.courses);
   }
 
