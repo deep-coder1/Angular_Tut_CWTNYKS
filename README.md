@@ -24,3 +24,4 @@ ng serve -o --port 4201 -->
 <!-- 03:14:33 - Use of localStorage (to store & fetch courses) and Enum -->
 <!-- 03:28:56 - Spread Operator, Add & Fetch Courses using localStorage in Admin & Courses Component -->
 <!-- 03:56:00 - Add Bootstrap Icons & Delete Course from Admin Component -->
+<!-- 04:03:27 - Add Footer -->
