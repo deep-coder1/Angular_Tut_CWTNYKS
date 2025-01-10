@@ -12,21 +12,28 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./home/home.component').then((c) => c.HomeComponent),
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
   },
   {
     // path: 'about/:id',
     path: 'about',
     loadComponent: () =>
-      import('./components/about/about.component').then(
+      import('./pages/about/about.component').then(
         (c) => c.AboutComponent
       ),
   },
   {
     path: 'admin',
     loadComponent: () =>
-      import('./admin/admin.component').then(
+      import('./pages/admin/admin.component').then(
         (c) => c.AdminComponent
+      ),
+  },
+  {
+    path: 'courses',
+    loadComponent: () =>
+      import('./pages/courses/courses.component').then(
+        (c) => c.CoursesComponent
       ),
   },
 ];

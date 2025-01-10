@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CoursesComponent } from "../courses/courses.component";
-import { Strings } from '../enum/strings.enum';
+import { Strings } from '../../enum/strings.enum';
 // import { Router } from '@angular/router';
 // import { RouterModule } from '@angular/router';
 
