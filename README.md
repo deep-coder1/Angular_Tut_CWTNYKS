@@ -25,4 +25,4 @@ ng serve -o --port 4201 -->
 <!-- 03:28:56 - Spread Operator, Add & Fetch Courses using localStorage in Admin & Courses Component -->
 <!-- 03:56:00 - Add Bootstrap Icons & Delete Course from Admin Component -->
 <!-- 04:03:27 - Add Footer -->
-<!-- 04:09:08 - Restructure project & optimise code for better code readability -->
+<!-- 04:13:40 - Restructure project & optimise code for better code readability -->
