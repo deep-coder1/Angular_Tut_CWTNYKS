@@ -27,3 +27,4 @@ ng serve -o --port 4201 -->
 <!-- 04:03:27 - Add Footer -->
 <!-- 04:13:40 - Restructure project & optimise code for better code readability -->
 <!-- 04:21:39 - Design About Component -->
+<!-- 04:26:15 - Interfaces -->

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Strings } from '../../enum/strings.enum';
+import { Course } from '../../interfaces/course.interface';
 
 @Component({
   selector: 'app-courses',
@@ -10,7 +11,8 @@ import { Strings } from '../../enum/strings.enum';
 export class CoursesComponent {
 
   // @Input() courses: any[] = [];
-  courses: any[] = [];
+  // courses: any[] = [];
+  courses: Course[] = [];
   @Input() isAdmin = false;
   @Output() del = new EventEmitter();
 
@@ -23,6 +25,7 @@ export class CoursesComponent {
     console.log(data);
     if(data){
       this.courses = JSON.parse(data);
+      // this.courses[0] = { ...this.courses[0], isActive: true }
     }
   }
 
