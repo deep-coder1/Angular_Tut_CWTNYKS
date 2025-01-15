@@ -99,10 +99,10 @@ export class AdminComponent {
 
   }
 
-  deleteCourse(course: any) {
-    // this.courses = this.courses.filter(course_item => course_item.id != course.id);
-    // this.setItem(this.courses);
-  }
+  // deleteCourse(course: any) {
+  //   // this.courses = this.courses.filter(course_item => course_item.id != course.id);
+  //   // this.setItem(this.courses);
+  // }
 
   setItem(data: any) {
     localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(data));

@@ -28,3 +28,4 @@ ng serve -o --port 4201 -->
 <!-- 04:13:40 - Restructure project & optimise code for better code readability -->
 <!-- 04:21:39 - Design About Component -->
 <!-- 04:26:15 - Interfaces -->
+<!-- 04:31:45 - Services in Angular (Create course service for CRUD with RxJS) -->
