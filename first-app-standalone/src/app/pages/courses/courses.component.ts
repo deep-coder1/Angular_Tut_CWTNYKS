@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
@@ -17,10 +17,14 @@ export class CoursesComponent {
   courses: Course[] = [];
   @Input() isAdmin = false;
   // @Output() del = new EventEmitter();
+  private courseService = inject(CourseService);
 
-  constructor(private courseService: CourseService) {}
+  constructor(
+    // private courseService: CourseService
+  ) {}
 
   ngOnInit() {
+    this.courses = this.courseService.getCourses();
     // this.getCourses();
   }
 
