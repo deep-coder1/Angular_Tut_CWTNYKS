@@ -110,8 +110,8 @@ export class AdminComponent {
   //   // this.setItem(this.courses);
   // }
 
-  setItem(data: any) {
-    localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(data));
-  }
+  // setItem(data: any) {
+  //   localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(data));
+  // }
 
 }
