@@ -85,23 +85,28 @@ export class AdminComponent {
     this.cover_file = null;
   }
 
-  saveCourse(form: NgForm) {
-    const formValue = form.value;
-    console.log(formValue);
+  async saveCourse(form: NgForm) {
+    try {
+      const formValue = form.value;
+      console.log(formValue);
 
-    const data: Course = {
-      ...formValue,
-      image: this.cover,
-      // id: this.courses.length + 1,
-    };
+      const data: Course = {
+        ...formValue,
+        image: this.cover,
+        // id: this.courses.length + 1,
+      };
 
-    this.courseService.addCourse(data);
+      await this.courseService.addCourse(data);
 
-    // this.courses = [ ...this.courses, data ];
-    // // this.localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
-    // this.setItem(this.courses);
+      // this.courses = [ ...this.courses, data ];
+      // // this.localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
+      // this.setItem(this.courses);
 
-    this.clearForm(form);
+      this.clearForm(form);
+    } catch(e) {
+      console.log(e);;
+
+    }
 
   }
 

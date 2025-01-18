@@ -36,6 +36,15 @@ export class CourseService {
 
     // save in local storage
     this.setItem(newCourses);
+
+    return newCourses;
+  }
+
+  deleteCourse(data: Course) {
+    let courses: Course[] = this.courses$.value;
+    courses = courses.filter(course_item => course_item.id != data.id);
+    this.updateCourse(courses);
+    this.setItem(courses);
   }
 
   updateCourse(data: Course[]) {
