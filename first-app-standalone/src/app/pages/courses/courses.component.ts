@@ -3,6 +3,7 @@ import { Component, inject, Input } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
 import { CourseService } from '../../services/course/course.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -17,6 +18,7 @@ export class CoursesComponent {
   courses: Course[] = [];
   @Input() isAdmin = false;
   // @Output() del = new EventEmitter();
+  coursesSub!: Subscription;
   private courseService = inject(CourseService);
 
   constructor(
@@ -27,7 +29,7 @@ export class CoursesComponent {
     this.courses = this.courseService.getCourses();
     // this.getCourses();
 
-    this.courseService.courses.subscribe({
+    this.coursesSub = this.courseService.courses.subscribe({
       next: (courses) => {
         this.courses = courses;
         console.log('courses', this.courses);
@@ -49,8 +51,14 @@ export class CoursesComponent {
   //   }
   // }
 
-  deleteCourse(course: any) {
+  deleteCourse(course: Course) {
     // this.del.emit(course);
+    this.courseService.deleteCourse(course);
+  }
+
+  ngOnDestory() {
+    console.log('courses ondestory');
+    if(this.coursesSub) this.coursesSub.unsubscribe();
   }
 
 }

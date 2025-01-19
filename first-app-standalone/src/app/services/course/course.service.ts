@@ -17,7 +17,7 @@ export class CourseService {
 
   getCourses() {
     const data = localStorage.getItem(Strings.STORAGE_KEY);
-    console.log(data);
+    // console.log(data);
     if (data) {
       const courses = JSON.parse(data);
       // this.courses[0] = { ...this.couyyyrses[0], isActive: true }
