@@ -29,4 +29,4 @@ ng serve -o --port 4201 -->
 <!-- 04:21:39 - Design About Component -->
 <!-- 04:26:15 - Interfaces -->
 <!-- 05:04:10 - Services in Angular (Create course service for CRUD with RxJS) -->
-<!-- 05:12:10 - Sync Code in both Standalone & ngModule projects -->
+<!-- 05:17:45 - Sync Code in both Standalone & ngModule projects -->
