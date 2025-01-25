@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
@@ -15,7 +15,8 @@ export class CoursesComponent {
 
   // @Input() courses: any[] = [];
   // courses: any[] = [];
-  courses: Course[] = [];
+  // courses: Course[] = [];
+  courses = signal<Course[]>([]);
   @Input() isAdmin = false;
   // @Output() del = new EventEmitter();
   coursesSub!: Subscription;
@@ -26,13 +27,17 @@ export class CoursesComponent {
   ) {}
 
   ngOnInit() {
-    this.courses = this.courseService.getCourses();
+    // this.courses = this.courseService.getCourses();
+    this.courses.set( this.courseService.getCourses());
     // this.getCourses();
 
     this.coursesSub = this.courseService.courses.subscribe({
       next: (courses) => {
-        this.courses = courses;
-        console.log('courses', this.courses);
+        // this.courses = courses;
+        // console.log('courses', this.courses);
+
+        this.courses.set(courses);
+        console.log('courses', this.courses());
 
       },
       error: (e) => {
