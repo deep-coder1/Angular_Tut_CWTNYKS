@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal } from '@angular/core';
+import { Component, computed, inject, Input, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
@@ -22,11 +22,24 @@ export class CoursesComponent {
   coursesSub!: Subscription;
   private courseService = inject(CourseService);
 
+  // Without signals
+  a = 1;
+  b = 2;
+  c = this.a + this.b;
+
+  // With signals
+  a1 = signal(1);
+  b1 = signal(2);
+  c1 = computed(() => this.a1() + this.b1());
+
   constructor(
     // private courseService: CourseService
   ) {}
 
   ngOnInit() {
+
+    this.underStandSignalUsageWithExample();
+
     // this.courses = this.courseService.getCourses();
     this.courses.set( this.courseService.getCourses());
     // this.getCourses();
@@ -45,6 +58,19 @@ export class CoursesComponent {
 
       }
     })
+  }
+
+  underStandSignalUsageWithExample() {
+    // without signals
+    console.log('c before value change: ', this.c);
+    this.a = 4;
+    console.log('c after value change: ',this.c);
+
+    // with signals
+    console.log('c1 before value change: ', this.c1());;
+    this.a1.set(4);
+    console.log('c1 after value change: ', this.c1());;
+
   }
 
   // getCourses() {

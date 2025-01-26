@@ -32,4 +32,4 @@ ng serve -o --port 4201 -->
 <!-- 05:17:45 - Sync Code in both Standalone & ngModule projects -->
 
 
-<!-- 05:37:14 - Implementing Signals, ZoneJS vs Signals, Writable Signal -->
+<!-- 05:42:40 - Implementing Signals, ZoneJS vs Signals, Writable Signal -->
