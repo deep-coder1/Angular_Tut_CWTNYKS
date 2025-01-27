@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CoursesComponent } from '../courses/courses.component';
 import { Strings } from '../../enum/strings.enum';
@@ -19,10 +19,18 @@ import { Course } from '../../interfaces/course.interface';
 })
 export class AdminComponent {
 
-  model: any = {};
-  cover!: string | null;
-  cover_file: any;
-  showError = false;
+  // // without signals
+  // model: any = {};
+  // cover!: string | null;
+  // cover_file: any;
+  // showError = false;
+
+  // with signals
+  model = signal<any>({});
+  cover = signal<string | null>(null);
+  cover_file = signal<any>(null);
+  showError = signal<boolean>(false);
+
   // courses: any[] = [];
 
   private courseService = inject(CourseService);
@@ -46,16 +54,19 @@ export class AdminComponent {
 
     const file = event.target.files[0];
     if(file) {
-      this.cover = file;
+      // this.cover = file;
+      this.cover_file.set(file);
       const reader = new FileReader();
       console.log(reader);
       reader.onload = () => {
         const dataUrl = reader.result!.toString();
-        this.cover = dataUrl;
+        // this.cover = dataUrl;
+        this.cover.set(dataUrl);
         console.log('image: ', this.cover);
       };
       reader.readAsDataURL(file);
-      this.showError = false;
+      // this.showError = false;
+      this.showError.set(false);
     }
   }
 
@@ -64,15 +75,15 @@ export class AdminComponent {
       console.log('Form invalid');
       form.control.markAllAsTouched();
       if(!this.cover) {
-        this.showError = true;
+        // this.showError = true;
+        this.showError.set(true);
       }
       return;
     }
 
-    if(this.cover) {
-      console.log();
-
-    }
+    // if(this.cover) {
+    //   console.log();
+    // }
 
     console.log(form.value);
 
@@ -81,8 +92,10 @@ export class AdminComponent {
 
   clearForm(form: NgForm) {
     form.reset();
-    this.cover = null;
-    this.cover_file = null;
+    // this.cover = null;
+    // this.cover_file = null;
+    this.cover.set(null);
+    this.cover_file.set(null);
   }
 
   async saveCourse(form: NgForm) {
@@ -92,7 +105,8 @@ export class AdminComponent {
 
       const data: Course = {
         ...formValue,
-        image: this.cover,
+        image: this.cover(),
+        // image: this.cover,
         // id: this.courses.length + 1,
       };
 

@@ -33,3 +33,4 @@ ng serve -o --port 4201 -->
 
 
 <!-- 05:42:40 - Implementing Signals, ZoneJS vs Signals, Writable Signal -->
+<!-- 05:50:40 - Why Signals? Learn Computed Signal & @let decorator -->

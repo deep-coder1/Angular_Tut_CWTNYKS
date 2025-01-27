@@ -1,9 +1,10 @@
-import { Component, computed, inject, Input, signal } from '@angular/core';
+import { Component, computed, inject, Input, SecurityContext, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
 import { CourseService } from '../../services/course/course.service';
 import { Subscription } from 'rxjs';
+// import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-courses',
@@ -21,6 +22,7 @@ export class CoursesComponent {
   // @Output() del = new EventEmitter();
   coursesSub!: Subscription;
   private courseService = inject(CourseService);
+  // private sanitizer = inject(DomSanitizer)
 
   // Without signals
   a = 1;
@@ -67,11 +69,14 @@ export class CoursesComponent {
     console.log('c after value change: ',this.c);
 
     // with signals
-    console.log('c1 before value change: ', this.c1());;
+    console.log('c1 before value change: ', this.c1());
     this.a1.set(4);
-    console.log('c1 after value change: ', this.c1());;
-
+    console.log('c1 after value change: ', this.c1());
   }
+
+  // sanitizeUrl(value: string) {
+  //   return this.sanitizer.sanitize(SecurityContext.URL, value) || null;
+  // }
 
   // getCourses() {
   //   const data = localStorage.getItem(Strings.STORAGE_KEY);
