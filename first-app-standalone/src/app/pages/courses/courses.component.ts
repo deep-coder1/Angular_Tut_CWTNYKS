@@ -1,9 +1,10 @@
-import { Component, computed, inject, Input, SecurityContext, signal } from '@angular/core';
+import { Component, computed, effect, inject, Input, signal } from '@angular/core';
+// import { Component, computed, effect, inject, Input, SecurityContext, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
 import { Course } from '../../interfaces/course.interface';
 import { CourseService } from '../../services/course/course.service';
-import { Subscription } from 'rxjs';
+// import { Subscription } from 'rxjs';
 // import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -20,7 +21,7 @@ export class CoursesComponent {
   courses = signal<Course[]>([]);
   @Input() isAdmin = false;
   // @Output() del = new EventEmitter();
-  coursesSub!: Subscription;
+  // coursesSub!: Subscription;
   private courseService = inject(CourseService);
   // private sanitizer = inject(DomSanitizer)
 
@@ -36,30 +37,43 @@ export class CoursesComponent {
 
   constructor(
     // private courseService: CourseService
-  ) {}
+  ) {
+    // Use `effect` to automatically respond to changes in the service's courses signal
+    effect(() => {
+      console.log('Effect');
+
+      const courses = this.courseService.courseSignal();
+
+      if (courses !== this.courses()) {
+        this.courses.set(courses);
+        console.log('courses: ', this.courses());
+      }
+    }, { allowSignalWrites: true });
+  }
 
   ngOnInit() {
 
-    this.underStandSignalUsageWithExample();
+    // this.underStandSignalUsageWithExample();
 
-    // this.courses = this.courseService.getCourses();
-    this.courses.set( this.courseService.getCourses());
-    // this.getCourses();
+    // // this.courses = this.courseService.getCourses();
+    // this.courses.set( this.courseService.getCourses());
+    // // this.getCourses();
 
-    this.coursesSub = this.courseService.courses.subscribe({
-      next: (courses) => {
-        // this.courses = courses;
-        // console.log('courses', this.courses);
+    // this.coursesSub = this.courseService.courses.subscribe({
+    //   next: (courses) => {
+    //     // this.courses = courses;
+    //     // console.log('courses', this.courses);
 
-        this.courses.set(courses);
-        console.log('courses', this.courses());
+    //     this.courses.set(courses);
+    //     console.log('courses', this.courses());
 
-      },
-      error: (e) => {
-        console.log(e);
+    //   },
+    //   error: (e) => {
+    //     console.log(e);
 
-      }
-    })
+    //   }
+    // })
+
   }
 
   underStandSignalUsageWithExample() {
@@ -93,8 +107,8 @@ export class CoursesComponent {
   }
 
   ngOnDestory() {
-    console.log('courses ondestory');
-    if(this.coursesSub) this.coursesSub.unsubscribe();
+    // console.log('courses ondestory');
+    // if(this.coursesSub) this.coursesSub.unsubscribe();
   }
 
 }

@@ -21,7 +21,7 @@ export class CourseService {
   }
 
   constructor() {
-    // this.getCourses();
+    this.loadCourses();
   }
 
   // getCourses() {
