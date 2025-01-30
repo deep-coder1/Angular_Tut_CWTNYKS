@@ -23,7 +23,7 @@
         <img [src]="course.image" alt="course img">
         <!-- <img src={{course.image}} alt="course img"> -->
 
-        @if(isAdmin) {
+        @if(isAdmin()) {
           <button class="btn btn-danger" (click)="deleteCourse(course)">
             <i class="bi bi-trash-fill"></i>
           </button>
@@ -39,7 +39,7 @@
      <!-- <app-courses [course]="course" [isDelete]="true" (del)="deleteCourse($event)"></app-courses> -->
    </div>.
   } @empty {
-    @if(isAdmin) {
+    @if(isAdmin()) {
       <div align="center">
         No Course added yet
       </div>

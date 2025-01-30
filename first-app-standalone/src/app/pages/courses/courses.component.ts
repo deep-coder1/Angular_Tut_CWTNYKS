@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, Input, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, Input, signal } from '@angular/core';
 // import { Component, computed, effect, inject, Input, SecurityContext, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
@@ -19,7 +19,20 @@ export class CoursesComponent {
   // courses: any[] = [];
   // courses: Course[] = [];
   courses = signal<Course[]>([]);
-  @Input() isAdmin = false;
+  // @Input() isAdmin = false;
+
+  isAdmin = input<boolean>(false);
+
+  // isAdmin = input.required(
+  //   // false,
+  //   {
+  //   // alias: 'isAdm';
+  //   // transform: (value: boolean) => {
+  //   //   // execute any code
+  //   //   return value;
+  //   // }
+  // })
+
   // @Output() del = new EventEmitter();
   // coursesSub!: Subscription;
   private courseService = inject(CourseService);
