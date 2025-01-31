@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input, Input, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, Input, model, output, signal } from '@angular/core';
 // import { Component, computed, effect, inject, Input, SecurityContext, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
@@ -23,6 +23,14 @@ export class CoursesComponent {
 
   isAdmin = input<boolean>(false);
 
+  isAdmin1 = model<boolean>(false, {
+    alias: 'isActive',
+  });
+
+  // isAdmin1 = model.required<boolean>({
+  //   alias: 'isActive',
+  // });
+
   // isAdmin = input.required(
   //   // false,
   //   {
@@ -34,6 +42,11 @@ export class CoursesComponent {
   // })
 
   // @Output() del = new EventEmitter();
+
+  // del = output<any></any>({
+  //   alias: '',
+  // });
+
   // coursesSub!: Subscription;
   private courseService = inject(CourseService);
   // private sanitizer = inject(DomSanitizer)
