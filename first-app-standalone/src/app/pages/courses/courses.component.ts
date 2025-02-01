@@ -132,6 +132,10 @@ export class CoursesComponent {
     this.courseService.deleteCourse(course);
   }
 
+  changeIsActive(course: Course){
+    this.isAdmin1.update((val) => !this.isAdmin());
+  }
+
   ngOnDestory() {
     // console.log('courses ondestory');
     // if(this.coursesSub) this.coursesSub.unsubscribe();

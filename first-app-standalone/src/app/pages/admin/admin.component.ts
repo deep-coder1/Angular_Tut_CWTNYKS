@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CoursesComponent } from '../courses/courses.component';
 import { Strings } from '../../enum/strings.enum';
@@ -31,14 +31,25 @@ export class AdminComponent {
   cover_file = signal<any>(null);
   showError = signal<boolean>(false);
 
+  isActive = signal<boolean>(false);
+
   // courses: any[] = [];
 
   private courseService = inject(CourseService);
 
+  constructor() {
+    effect(() => {
+      console.log(this.isActive());
+    });
+  }
+
   ngOnInit() {
     console.log('admin ngoninit');
     // this.getCourses();
+  }
 
+  changeIsActive(){
+    this.isActive.update((val) => !this.isActive());
   }
 
   // getCourses() {
