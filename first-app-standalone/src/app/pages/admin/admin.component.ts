@@ -1,8 +1,9 @@
-import { NgIf } from '@angular/common';
-import { Component, effect, inject, signal } from '@angular/core';
+// import { NgIf } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+// import { Component, effect, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CoursesComponent } from '../courses/courses.component';
-import { Strings } from '../../enum/strings.enum';
+// import { Strings } from '../../enum/strings.enum';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interfaces/course.interface';
 
@@ -31,16 +32,16 @@ export class AdminComponent {
   cover_file = signal<any>(null);
   showError = signal<boolean>(false);
 
-  isActive = signal<boolean>(false);
+  // isActive = signal<boolean>(false);
 
   // courses: any[] = [];
 
   private courseService = inject(CourseService);
 
   constructor() {
-    effect(() => {
-      console.log(this.isActive());
-    });
+    // effect(() => {
+    //   console.log(this.isActive());
+    // });
   }
 
   ngOnInit() {
@@ -48,9 +49,9 @@ export class AdminComponent {
     // this.getCourses();
   }
 
-  changeIsActive(){
-    this.isActive.update((val) => !this.isActive());
-  }
+  // changeIsActive(){
+  //   this.isActive.update((val) => !this.isActive());
+  // }
 
   // getCourses() {
   //   const data = localStorage.getItem(Strings.STORAGE_KEY);

@@ -1,4 +1,5 @@
-import { Component, computed, effect, inject, input, Input, model, output, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, signal } from '@angular/core';
+// import { Component, computed, effect, inject, input, Input, model, output, signal } from '@angular/core';
 // import { Component, computed, effect, inject, Input, SecurityContext, signal } from '@angular/core';
 // import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Strings } from '../../enum/strings.enum';
@@ -23,9 +24,9 @@ export class CoursesComponent {
 
   isAdmin = input<boolean>(false);
 
-  isAdmin1 = model<boolean>(false, {
-    alias: 'isActive',
-  });
+  // isAdmin1 = model<boolean>(false, {
+  //   alias: 'isActive',
+  // });
 
   // isAdmin1 = model.required<boolean>({
   //   alias: 'isActive',
@@ -132,9 +133,9 @@ export class CoursesComponent {
     this.courseService.deleteCourse(course);
   }
 
-  changeIsActive(course: Course){
-    this.isAdmin1.update((val) => !this.isAdmin());
-  }
+  // changeIsActive(course: Course){
+  //   this.isAdmin1.update((val) => !this.isAdmin());
+  // }
 
   ngOnDestory() {
     // console.log('courses ondestory');
