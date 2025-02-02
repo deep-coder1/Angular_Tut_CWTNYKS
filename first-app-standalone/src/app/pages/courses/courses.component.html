@@ -1,6 +1,7 @@
 <div class="row mt-5">
   <!-- @for(course of courses; track $index) { -->
-  @for(course of courses(); track $index) {
+  <!-- @for(course of courses(); track $index) { -->
+  @for(course of courseService.courseSignal(); track $index) {
     <!-- @for(course of courses; track course.id) { -->
     <div class="col-lg-3 mb-4">
      <!-- <button class="btn btn-primary" (click)="changeIsActive(course)">Test IsAdm</button> -->

@@ -50,7 +50,8 @@ export class AdminComponent {
   }
 
   // changeIsActive(){
-  //   this.isActive.update((val) => !this.isActive());
+  //   // this.isActive.update((val) => !this.isActive());
+  //   this.isActive.update((val) => !val);
   // }
 
   // getCourses() {

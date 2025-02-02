@@ -37,3 +37,4 @@ ng serve -o --port 4201 -->
 <!-- 06:08:13 - Effects in Signals -->
 <!-- 06:22:35 - Effects in Signals -->
 <!-- 06:25:48 - Input, Output & Model Signals -->
+<!-- 06:34:26 - Optimise & Sync code (using Signals Concept) -->

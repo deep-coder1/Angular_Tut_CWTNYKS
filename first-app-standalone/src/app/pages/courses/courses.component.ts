@@ -19,7 +19,7 @@ export class CoursesComponent {
   // @Input() courses: any[] = [];
   // courses: any[] = [];
   // courses: Course[] = [];
-  courses = signal<Course[]>([]);
+  // courses = signal<Course[]>([]);
   // @Input() isAdmin = false;
 
   isAdmin = input<boolean>(false);
@@ -49,8 +49,11 @@ export class CoursesComponent {
   // });
 
   // coursesSub!: Subscription;
-  private courseService = inject(CourseService);
+  // private courseService = inject(CourseService);
+  courseService = inject(CourseService);
   // private sanitizer = inject(DomSanitizer)
+
+  // courses = computed(() => this.courseService.courseSignal());
 
   // Without signals
   a = 1;
@@ -66,16 +69,16 @@ export class CoursesComponent {
     // private courseService: CourseService
   ) {
     // Use `effect` to automatically respond to changes in the service's courses signal
-    effect(() => {
-      console.log('Effect');
+    // effect(() => {
+    //   console.log('Effect');
 
-      const courses = this.courseService.courseSignal();
+    //   const courses = this.courseService.courseSignal();
 
-      if (courses !== this.courses()) {
-        this.courses.set(courses);
-        console.log('courses: ', this.courses());
-      }
-    }, { allowSignalWrites: true });
+    //   if (courses !== this.courses()) {
+    //     this.courses.set(courses);
+    //     console.log('courses: ', this.courses());
+    //   }
+    // }, { allowSignalWrites: true });
   }
 
   ngOnInit() {
@@ -134,7 +137,8 @@ export class CoursesComponent {
   }
 
   // changeIsActive(course: Course){
-  //   this.isAdmin1.update((val) => !this.isAdmin());
+  //   // this.isAdmin1.update((val) => !this.isAdmin());
+  //   this.isAdmin1.update((val) => !val));
   // }
 
   ngOnDestory() {
