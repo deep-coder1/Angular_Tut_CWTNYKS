@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CoursesComponent } from '../courses/courses.component';
-import { AboutComponent } from "../about/about.component";
+import { AboutComponent } from '../about/about.component';
 import { HttpClient } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
 // import { Strings } from '../../enum/strings.enum';
 // import { Router } from '@angular/router';
 // import { RouterModule } from '@angular/router';
@@ -37,16 +38,26 @@ export class HomeComponent {
     this.fetchHttpData();
   }
 
-  fetchHttpData() {
-    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe({
-      next: (posts) => {
-        console.log(posts);
-      },
-      error: (e) => {
-        console.log(e);
-        console.error(e);
-      }
-    });
+  async fetchHttpData() {
+    // this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe({
+    //   next: (posts) => {
+    //     console.log(posts);
+    //   },
+    //   error: (e) => {
+    //     console.log(e);
+    //     console.error(e);
+    //   }
+    // });
+
+    try {
+      const posts = await lastValueFrom(
+        this.http.get<any>('https://jsonplaceholder.typicode.com/posts')
+      );
+      console.log('posts: ', posts);
+    } catch (e) {
+      console.log(e);
+      console.error(e);
+    }
   }
 
   // getCourses() {

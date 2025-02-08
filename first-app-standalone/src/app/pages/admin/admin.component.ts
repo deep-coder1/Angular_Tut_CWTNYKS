@@ -6,6 +6,7 @@ import { CoursesComponent } from '../courses/courses.component';
 // import { Strings } from '../../enum/strings.enum';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interfaces/course.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +14,8 @@ import { Course } from '../../interfaces/course.interface';
     FormsModule,
     // NgIf,
     // NgFor,
-    CoursesComponent
+    CoursesComponent,
+    CommonModule
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',

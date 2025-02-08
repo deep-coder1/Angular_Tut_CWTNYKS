@@ -1,7 +1,12 @@
 <div class="card">
   <!-- <button class="btn btn-primary" (click)="changeIsActive()">change isactive</button> -->
-  <div class="card-header">
+  <!-- <div class="card-header">
     Add Course
+  </div> -->
+
+  <!-- Pipe implement -->
+  <div class="card-header">
+    {{'Add Course' | uppercase}}
   </div>
   <div class="card-body">
     <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
