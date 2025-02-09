@@ -95,3 +95,7 @@ For more information on using the Angular CLI, including detailed command refere
 
 <!-- style.scss file -->
 <!-- @import 'bootstrap-icons/font/bootstrap-icons.css'; -->
+
+
+<!-- Create directive -->
+<!-- ng g directive directives/hoverColor/hoverColor -->

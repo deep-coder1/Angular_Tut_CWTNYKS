@@ -41,3 +41,4 @@ ng serve -o --port 4201 -->
 <!-- 06:46:25 - Build & Deploy Angular App (in Firebase hosting for free) -->
 <!-- 06:57:33 - HttpClient (for APIs) -->
 <!-- 07:00:34 - Pipes -->
+<!-- 07:04:30 - Directives -->
