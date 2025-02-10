@@ -7,6 +7,7 @@ import { CoursesComponent } from '../courses/courses.component';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interfaces/course.interface';
 import { CommonModule } from '@angular/common';
+import { HoverColorDirective } from '../../directives/hoverColor/hover-color.directive';
 
 @Component({
   selector: 'app-admin',
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
     // NgIf,
     // NgFor,
     CoursesComponent,
-    CommonModule
+    CommonModule,
+    HoverColorDirective
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',

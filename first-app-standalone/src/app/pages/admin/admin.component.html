@@ -6,7 +6,9 @@
 
   <!-- Pipe implement -->
   <div class="card-header">
-    {{'Add Course' | uppercase}}
+    <span appHoverColor [defaultColor]="'blue'" [hoverColor]="'red'">
+      {{'Add Course' | uppercase}}
+    </span>
   </div>
   <div class="card-body">
     <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
