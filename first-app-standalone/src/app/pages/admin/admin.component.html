@@ -67,7 +67,7 @@
       }
 
       <div class="m-3" align="center">
-        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        <button type="submit" class="btn btn-primary btn-lg" [ngClass]="{'btn-success': isSaved()}">Save</button>
       </div>
     </form>
   </div>

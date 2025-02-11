@@ -42,3 +42,4 @@ ng serve -o --port 4201 -->
 <!-- 06:57:33 - HttpClient (for APIs) -->
 <!-- 07:00:34 - Pipes -->
 <!-- 07:08:45 - Directives -->
+<!-- 07:11:34 - NgClass -->

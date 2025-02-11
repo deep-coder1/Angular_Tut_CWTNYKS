@@ -35,6 +35,7 @@ export class AdminComponent {
   cover = signal<string | null>(null);
   cover_file = signal<any>(null);
   showError = signal<boolean>(false);
+  isSaved = signal<boolean>(false);
 
   // isActive = signal<boolean>(false);
 
@@ -133,6 +134,10 @@ export class AdminComponent {
       // // this.localStorage.setItem(Strings.STORAGE_KEY, JSON.stringify(this.courses));
       // this.setItem(this.courses);
 
+      this.isSaved.set(true);
+      setTimeout(() => {
+        this.isSaved.set(false);
+      }, 2000);
       this.clearForm(form);
     } catch(e) {
       console.log(e);;
