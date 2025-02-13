@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHoverColor]'
+  selector: '[appHoverColor]',
+  standalone: true
 })
 export class HoverColorDirective {
 

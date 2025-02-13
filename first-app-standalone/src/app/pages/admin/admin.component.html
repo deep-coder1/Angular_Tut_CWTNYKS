@@ -67,7 +67,9 @@
       }
 
       <div class="m-3" align="center">
-        <button type="submit" class="btn btn-primary btn-lg" [ngClass]="{'btn-success': isSaved()}">
+        <button type="submit" class="btn btn-primary btn-lg" [ngClass]="{ 'btn-success': isSaved() }"
+          [ngStyle]="{ 'color': isSaved() ? 'black' : '' }"
+        >
           {{ isSaved() ? 'Saved': 'Save' }}
         </button>
       </div>
