@@ -43,4 +43,5 @@ ng serve -o --port 4201 -->
 <!-- 07:00:34 - Pipes -->
 <!-- 07:08:45 - Directives -->
 <!-- 07:12:34 - NgClass -->
-<!-- 07:14:02 - NgStyle -->
+<!-- 07:17:55 - NgStyle -->
+<!-- 07:18:31 - Outro, End -->
